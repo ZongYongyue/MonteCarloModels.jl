@@ -1,0 +1,11 @@
+name = "MonteCarloModels"
+uuid = "ab4a1c28-6d15-42b4-ab33-70bc09e7e5a1"
+authors = ["Y.-Y. Zong"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+MonteCarlo = "7ed9e010-db43-58a0-91f1-3971ebfac852"
+
+[compat]
+julia = "1.11"
