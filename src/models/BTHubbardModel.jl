@@ -1,7 +1,6 @@
 @with_kw_noshow struct BTHubbardModel <: Model
     mu::Float64 = 0.0
     U::Float64 = 1.0
-    @assert U >= 0. "U must be positive."
     tre::Float64 = 1.0
     tim::ComplexF64 = 0.0
     l::Lattice{2}
@@ -58,12 +57,12 @@ function hopping_matrix(m::BTHubbardModel)
     for b in bds
         # NN paper direction
         if b.label == 1 
-            tup[b.from, b.to] = tp
-            tdown[b.from, b.to] = tm
+            tup[b.from, b.to] += tp
+            tdown[b.from, b.to] += tm
         # NN reverse direction
         else b.label == 2
-            tup[b.from, b.to] = tm
-            tdown[b.from, b.to] = tp
+            tup[b.from, b.to] += tm
+            tdown[b.from, b.to] += tp
         end
     end
 
